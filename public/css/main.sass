@@ -1,0 +1,58 @@
+@mixin for-size($size)
+   @if $size == phone-only
+      @media (max-width: 599px)
+         @content
+   @else if $size == tablet-portrait-up
+      @media (min-width: 600px)
+         @content
+   @else if $size == tablet-landscape-up
+      @media (min-width: 900px)
+         @content
+   @else if $size == desktop-up
+      @media (min-width: 1200px)
+         @content
+
+$color-one: #463F1A
+$color-two: #60492c
+$color-three: #208aae
+$color-four: #FFFFFF
+$color-five: #0d2149
+
+
+body
+   font-family: 'Luckiest Guy', cursive
+   max-width: 599px
+   .nav-class
+      display: flex
+      flex-flow: row wrap
+      justify-content: space-around
+      height: 100%
+      div
+         height: 100%
+         border: solid black 2px 1px
+         flex-grow: 1
+   @include for-size(phone-only)
+      background: blue
+      margin: 0
+      nav
+         position: fixed
+         bottom: 0
+         height: 20%
+         background: $color-two
+         width: 100%
+         div
+            border: solid black 2px
+            h3
+               width: 20%
+               text-align: center
+               position: fixed
+               bottom: 0
+               margin: 0
+   @include for-size(tablet-portrait-up)
+      background: green
+
+   @include for-size(tablet-landscape-up)
+      background: orange
+
+   @include for-size(desktop-up)
+      background: red

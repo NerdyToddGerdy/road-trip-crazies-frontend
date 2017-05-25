@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,IAAI;EACD,UAAU,EAAE,KAAK",
+"sources": ["main.sass"],
+"names": [],
+"file": "output"
+}

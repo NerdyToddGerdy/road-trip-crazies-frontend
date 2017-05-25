@@ -1,0 +1,41 @@
+body {
+  font-family: "Luckiest Guy", cursive;
+  max-width: 599px; }
+  body .nav-class {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    height: 100%; }
+    body .nav-class div {
+      height: 100%;
+      border: solid black 2px 1px;
+      flex-grow: 1; }
+  @media (max-width: 599px) {
+    body {
+      background: blue;
+      margin: 0; }
+      body nav {
+        position: fixed;
+        bottom: 0;
+        height: 20%;
+        background: #60492c;
+        width: 100%; }
+        body nav div {
+          border: solid black 2px; }
+          body nav div h3 {
+            width: 20%;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            margin: 0; } }
+  @media (min-width: 600px) {
+    body {
+      background: green; } }
+  @media (min-width: 900px) {
+    body {
+      background: orange; } }
+  @media (min-width: 1200px) {
+    body {
+      background: red; } }
+
+/*# sourceMappingURL=main.css.map */

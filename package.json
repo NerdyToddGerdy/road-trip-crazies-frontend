@@ -1,0 +1,22 @@
+{
+  "name": "road-trip-crazies-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Toadilicious/road-trip-crazies-frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Toadilicious/road-trip-crazies-frontend/issues"
+  },
+  "homepage": "https://github.com/Toadilicious/road-trip-crazies-frontend#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
