@@ -16,11 +16,14 @@
       <nav>
          <ng-include class='nav-class' src="'./partials/nav.html'"></ng-include>
       </nav>
-      <main>
+      <main ng-show="main.showHomePage">
          <ng-include class='home-class' src="'./partials/home.html'"></ng-include>
       </main>
-      <section>
-         <ng-include class="build-page" src="'./partials/build_page.html'"
+      <section ng-show="main.showBuildsPage">
+         <ng-include class="build-page" src="'./partials/build_page.html'">
+      </section>
+      <section ng-show="main.showLoginPage">
+         <ng-include class="login-page" src="'./partials/reg_n_login.html'">
       </section>
       <!-- <aside class="">
          aside

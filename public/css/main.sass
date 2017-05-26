@@ -135,12 +135,36 @@ body
                margin: 0
       main
          background-color: $color-four
-         height: 80%
+         height: 83%
          // position: fixed
          border-radius: 4px
          top: 10%
          margin: 11px
          // left: 0
+      section
+         
+      .build-tabs
+         display: flex
+         flex-direction: row
+         justify-content: center
+         div
+            padding: 2% 6% 0 6%
+            border-top: 1px black solid
+            border-right: 1px black solid
+            border-left: 1px black solid
+            border-radius: 5px 5px 0 0
+            h4
+               margin: 0
+      .login-tabs
+         @extend .build-tabs
+         div
+            padding: 2% 16% 0% 16%
+      .login-body
+         border-left: 1px black solid
+         border-right: 1px black solid
+         h3
+            text-align: center
+
    @include for-size(tablet-portrait-up)
       background: green
 

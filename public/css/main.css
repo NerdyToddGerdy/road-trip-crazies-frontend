@@ -109,10 +109,29 @@ body {
             margin: 0; }
       body main {
         background-color: #F7BC7D;
-        height: 80%;
+        height: 83%;
         border-radius: 4px;
         top: 10%;
-        margin: 11px; } }
+        margin: 11px; }
+      body .build-tabs, body .login-tabs {
+        display: flex;
+        flex-direction: row;
+        justify-content: center; }
+        body .build-tabs div, body .login-tabs div {
+          padding: 2% 6% 0 6%;
+          border-top: 1px black solid;
+          border-right: 1px black solid;
+          border-left: 1px black solid;
+          border-radius: 5px 5px 0 0; }
+          body .build-tabs div h4, body .login-tabs div h4 {
+            margin: 0; }
+      body .login-tabs div {
+        padding: 2% 16% 0% 16%; }
+      body .login-body {
+        border-left: 1px black solid;
+        border-right: 1px black solid; }
+        body .login-body h3 {
+          text-align: center; } }
   @media (min-width: 600px) {
     body {
       background: green; } }
