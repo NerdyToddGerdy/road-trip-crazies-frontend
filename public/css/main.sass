@@ -12,16 +12,20 @@
       @media (min-width: 1200px)
          @content
 
-$color-one: #463F1A
+$color-one: #ABC8AF
 $color-two: #60492c
-$color-three: #208aae
-$color-four: #FFFFFF
+$color-three: #F9CEA0
+$color-four: #F7BC7D
 $color-five: #0d2149
 
-
+// *
+//    border: 2px orange solid
+html
+   height: 100%
 body
    font-family: 'Luckiest Guy', cursive
    max-width: 599px
+   height: 96%
    .nav-class
       display: flex
       flex-flow: row wrap
@@ -31,15 +35,95 @@ body
          height: 100%
          border: solid black 2px 1px
          flex-grow: 1
+   // main
+
+   .home-class
+      // position: fixed
+      top: 20%
+      left: 0
+      display: flex
+      flex-flow: row wrap
+      justify-content: space-between
+      height: 100%
+      div
+         text-align: center
+         width: 100%
+         // height: 100%
+         margin: 0
+         h2
+            margin: 0
+
    @include for-size(phone-only)
-      background: blue
+      background: $color-one
       margin: 0
+      #trailer
+         width: 150%
+         height: 163%
+         margin: -6% -108%
+      #group-shot
+         width: 124%
+         height: 170%
+         margin: -18% -100% 0% -91%
+      #Tom
+         width: 96%
+         height: 160%
+         margin: -29% 0%
+      #caution-tie
+         width: 103%
+         height: 172%
+         margin: -20% 2%
+      .top-image
+         width: 95%
+         height: 33%
+         overflow: hidden
+         h2
+            position: fixed
+            text-align: center
+            width: 100%
+            top: 28%
+            color: $color-one
+      .bottom-image
+         height: 33%
+         width: 95%
+         overflow: hidden
+         h2
+            position: fixed
+            text-align: center
+            width: 100%
+            top: 71.5%
+            left: -1%
+            color: $color-one
+      .middle-section
+         display: flex
+         flex-direction: row
+         height: 33%
+         .middle-section-image
+            overflow: hidden
+            height: 100%
+            h2
+               position: fixed
+               text-align: center
+               width: 46%
+               top: 57%
+               color: $color-one
+      header
+         height: 5%
+         margin: 20px 0px 0px
+         position: relative
+         top: 0
+         left: 0
+         font-size: .7em
+         h1
+            margin: 0
+            text-align: center
       nav
          position: fixed
          bottom: 0
-         height: 20%
-         background: $color-two
+         left: 0
+         height: 12%
+         background: $color-three
          width: 100%
+         margin: 0
          div
             border: solid black 2px
             h3
@@ -48,6 +132,14 @@ body
                position: fixed
                bottom: 0
                margin: 0
+      main
+         background-color: $color-four
+         height: 80%
+         // position: fixed
+         border-radius: 4px
+         top: 10%
+         margin: 11px
+         // left: 0
    @include for-size(tablet-portrait-up)
       background: green
 

@@ -7,6 +7,7 @@
        <script src="./js/app.js" charset="utf-8"></script>
       <title>Road Trip Crazies</title>
       <link href="https://fonts.googleapis.com/css?family=Comfortaa|Luckiest+Guy|Patrick+Hand" rel="stylesheet">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
    </head>
    <body ng-controller="MainController as main">
       <header>
@@ -16,10 +17,10 @@
          <ng-include class='nav-class' src="'./partials/nav.html'"></ng-include>
       </nav>
       <main>
-         main
+         <ng-include class='home-class' src="'./partials/home.html'"></ng-include>
       </main>
-      <aside class="">
+      <!-- <aside class="">
          aside
-      </aside>
+      </aside> -->
    </body>
 </html>
