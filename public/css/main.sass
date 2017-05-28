@@ -17,7 +17,7 @@ $color-one: #ABC8AF
 $color-two: #60492c
 $color-three: #F9CEA0
 $color-four: #F7BC7D
-$color-five: #0d2149
+$color-five: #cd3520
 
 // *
 //    border: 2px orange solid
@@ -82,7 +82,7 @@ body
             text-align: center
             width: 100%
             top: 28%
-            color: $color-one
+            color: $color-five
       .bottom-image
          height: 33%
          width: 95%
@@ -91,9 +91,9 @@ body
             position: fixed
             text-align: center
             width: 100%
-            top: 71.5%
+            top: 74%
             left: -1%
-            color: $color-one
+            color: $color-five
       .middle-section
          display: flex
          flex-direction: row
@@ -106,7 +106,7 @@ body
                text-align: center
                width: 46%
                top: 57%
-               color: $color-one
+               color: $color-five
       header
          height: 5%
          margin: 20px 0px 0px
@@ -141,8 +141,6 @@ body
          top: 10%
          margin: 11px
          // left: 0
-      section
-         
       .build-tabs
          display: flex
          flex-direction: row
@@ -155,13 +153,34 @@ body
             border-radius: 5px 5px 0 0
             h4
                margin: 0
+
+
+
+      // login for mobile
+      .login-section
+         height: 82%
+      .login-page
+         height: 100%
+      .main-login-div
+         width: 96%
+         margin: 2%
+         height: 100%
+         padding-bottom: 1%
+         div
+            h3
+               margin: 0
+
       .login-tabs
          @extend .build-tabs
+         width: 100%
          div
-            padding: 2% 16% 0% 16%
+            padding: 2% 17% 0% 16%
       .login-body
          border-left: 1px black solid
          border-right: 1px black solid
+         border-bottom: 1pc black solid
+         height: 100%
+         border-radius: 0 0 5px 5px
          h3
             text-align: center
 

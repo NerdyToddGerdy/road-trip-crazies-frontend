@@ -1,20 +1,27 @@
 <div class="main-login-div">
    <div class="login-tabs">
-      <div class="login-tab">
+      <div ng-click="main.loadLoginForm()" class="login-tab">
          <h4>login</h4>
+         {{
       </div>
-      <div class="reg-tab">
+      <div ng-click="main.loadRegForm()" class="reg-tab">
          <h4>Register</h4>
+
       </div>
    </div>
    <div class="login-body">
-      <div class="login-form">
+      <div ng-show="main.toggleLoginForm" class="login-form">
          <h3>LOGIN</h3>
-         <form ng-submit="userCtrl.login(userPass)">
+         <form ng-submit="main.login(userPass)">
+            <input type='test' ng-model='userPass.username' placeholder="username"/>
+            <br>
+            <input type="password" ng-model='userPass.password' placeholder="password" />
+            <br>
 
+            <input type="submit"/>
          </form>
       </div>
-      <div class="registration-form">
+      <div ng-show="main.toggleRegForm" class="registration-form">
          <h3>REGISTER</h3>
       </div>
    </div>

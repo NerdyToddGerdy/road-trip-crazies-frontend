@@ -8,6 +8,10 @@
       </div>
    </div>
    <div class="builds-list-space" ng-repeat="build in main.builds">
-
+      <h3>{{build.build_name}}</h3>
+      <h5>Dates: {{build.start_date}} - {{build.end_date}}</h5>
+      <h5>About the Family {{build.family_information}}</h5>
+      <h5>{{build.hotel_link}}</h5>
+      <hr>
    </div>
 </div>
