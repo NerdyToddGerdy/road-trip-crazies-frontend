@@ -5,13 +5,18 @@ const app = angular.module('CrazyApp', []);
 const url= "http://localhost:3000";
 
 app.controller('MainController', ['$http', function($http){
-   this.test="hi"
+   this.test="hi";
    this.showHomePage = false;
    this.showBuildsPage = false;
    this.showLoginPage = true;
+   this.showChatPage = false;
 
    this.toggleLoginForm = true;
    this.toggleRegForm = false;
+   this.toggleUpcomingBuilds = true;
+   this.togglePreviousBuilds = false;
+
+   this.regFormData = {};
    this.builds = [];
    this.user = {};
 
@@ -19,6 +24,7 @@ app.controller('MainController', ['$http', function($http){
       this.showHomePage = false;
       this.showBuildsPage = false;
       this.showLoginPage = false;
+      this.showChatPage = false;
    };
    this.loadRegForm = function(){
       this.toggleLoginForm = false;
@@ -29,6 +35,22 @@ app.controller('MainController', ['$http', function($http){
       this.toggleRegForm = false;
    };
 
+   // Registration form -- needs to sign in after creation
+   this.register = function(){
+      console.log("regFormData ",this.regformdata);
+      $http({
+         method: 'POST',
+         url: url + '/users',
+         data: {
+            user:{
+               username: this.regformdata.username,
+               password: this.regformdata.password
+            }
+         }
+      }).then(function(response){
+         console.log(response);
+      }.bind(this));
+   };
 
    // USER INFORMATION
    this.login = function(userPass) {
@@ -50,7 +72,7 @@ app.controller('MainController', ['$http', function($http){
       url: url + '/builds',
    }).then(function(response){
       console.log(response);
-      this.builds = response.data
+      this.builds = response.data;
    }.bind(this));
 
 }]);

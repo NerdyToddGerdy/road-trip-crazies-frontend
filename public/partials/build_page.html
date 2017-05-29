@@ -1,17 +1,21 @@
 <div class="main-build-div">
    <div class="build-tabs">
-      <div class="upcoming-build-tab">
+      <div ng-click="main.toggleUpcomingBuilds = !main.toggleUpcomingBuilds; main.togglePreviousBuilds = !main.togglePreviousBuilds" class="upcoming-build-tab">
          <h4>upcoming builds</h4>
       </div>
       <div class="previous-builds-tab">
          <h4>previous builds</h4>
       </div>
+      <form ng-submit="AddABuildToList()">
+
+      </form>
    </div>
-   <div class="builds-list-space" ng-repeat="build in main.builds">
+   <div ng-show="main.toggleUpcomingBuilds" class="builds-list-space upcoming-builds" ng-repeat="build in main.builds">
       <h3>{{build.build_name}}</h3>
       <h5>Dates: {{build.start_date}} - {{build.end_date}}</h5>
       <h5>About the Family {{build.family_information}}</h5>
-      <h5>{{build.hotel_link}}</h5>
+      <a href="{{build.hotel_link}}">Hotel Link</a>
+      <!-- <h5>{{build.hotel_link}}</h5> -->
       <hr>
    </div>
 </div>

@@ -2,11 +2,9 @@
    <div class="login-tabs">
       <div ng-click="main.loadLoginForm()" class="login-tab">
          <h4>login</h4>
-         {{
       </div>
       <div ng-click="main.loadRegForm()" class="reg-tab">
          <h4>Register</h4>
-
       </div>
    </div>
    <div class="login-body">
@@ -23,6 +21,15 @@
       </div>
       <div ng-show="main.toggleRegForm" class="registration-form">
          <h3>REGISTER</h3>
+         <form ng-submit='main.register(); main.showLoginPage = !main.showLoginPage'>
+            <label for="main.regformdata.username">Username:</label><br>
+            <input ng-model="main.regformdata.username" placeholder="required" size="30px"/><br>
+
+            <label for="main.regformdata.password">Password:</label><br>
+            <input class="register-form-input" type="password" ng-model="main.regformdata.password" placeholder="required" required size="30px"/><br>
+
+            <button class="register-form-button btn btn-default" type="submit">Register</button>
+         </form>
       </div>
    </div>
 </div>
