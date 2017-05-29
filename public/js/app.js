@@ -11,6 +11,7 @@ app.controller('MainController', ['$http', function($http){
    this.showLoginPage = true;
    this.showChatPage = false;
    this.showProfilePage = false;
+   this.showUserUpdate = false;
 
    this.toggleLoginForm = true;
    this.toggleRegForm = false;
@@ -80,6 +81,20 @@ app.controller('MainController', ['$http', function($http){
          this.showHomePage = true;
       }.bind(this));
    };
+
+// UPDATE USER INFO
+this.userUpdate = function(data){
+   console.log(data);
+   $http({
+      method: 'PUT',
+      url: url + '/users/' + this.user.id,
+      data: { user: { username: data.username, password: data.password }}
+   }).then(function(response){
+      console.log(response);
+      this.findAllUsers();
+      this.showUserUpdate = false;
+   }.bind(this));
+};
 
 // DELETE SELECTED USER
    this.deleteThisUser = function(person){
