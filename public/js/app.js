@@ -217,6 +217,27 @@ this.userUpdate = function(data){
       }.bind(this));
    };
 
+   this.deleteThisPost = function(thisPost){
+      $http({
+         method: 'DELETE',
+         url: url + '/posts/' + thisPost.id
+      }).then(function(response){
+         this.findPosts();
+      }.bind(this));
+   };
+
+   this.updateThisPost = function(thisPost, post){
+      console.log(thisPost);
+      $http({
+         method: 'PUT',
+         url: url + '/posts/' + post.id,
+         data: thisPost
+      }).then(function(response){
+         console.log(response);
+         this.togglePostUpdate = false;
+         this.findPosts();
+      }.bind(this));
+   };
 
 // ---------------------------------
 // ****** END POSTS ******

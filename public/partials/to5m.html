@@ -1,15 +1,25 @@
-<form class="" ng-submit="main.createPost(newPostFormData, main.user)">
-   <input type="text" placeholder="Title" ng-model="newPostFormData.title">
-   <input type="textarea" placeholder="Type Content Here" ng-model="newPostFormData.comment">
-   <!-- <input type="hidden" ng-model="newPostFormData.user_id" value="{{main.user.id}}"> -->
-   <input type="submit">
+
+<form ng-if="main.user.is_admin" class="" ng-submit="main.createPost(newPostFormData, main.user)">
+   <h5>Add a post</h5>
+   <input type="text" placeholder="Title" ng-model="newPostFormData.title"><br>
+   <input type="textarea" rows="10" cols="50" placeholder="Type Content Here" ng-model="newPostFormData.comment"><br>
+   <input type="submit"><br>
 </form>
 
 <ul ng-repeat="post in main.posts | orderBy: 'created_at':reverse">
    <h4>{{post.title}}</h4>
    <h6>{{post.created_at | date:format:shortDate}}</h6>
    <h5>{{post.comment}}</h5>
+   <div ng-if="main.user.is_admin" class="">
+      <h6 ng-click="main.deleteThisPost(post)">Delete this Post</h6>
+
+      <h6 ng-click="main.togglePostUpdate = !main.togglePostUpdate">Update this Post</h6>
+      <form ng-show="main.togglePostUpdate" class="" ng-submit="main.updateThisPost(updatePostFormData, post)">
+         <input type="text" placeholder="{{post.title}}" ng-model="updatePostFormData.title"><br>
+         <input type="textarea" rows="10" cols="50" placeholder="{{post.comment}}" ng-model="updatePostFormData.comment"><br>
+         <input type="submit"><br>
+      </form>
+   </div>
+
    <hr>
-   <h6>Delete this Post</h6>
-   <h6>Update this Post</h6>
 </ul>
