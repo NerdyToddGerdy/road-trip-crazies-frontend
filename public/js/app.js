@@ -17,6 +17,7 @@ app.controller('MainController', ['$http', function($http){
    this.toggleRegForm = false;
    this.toggleUpcomingBuilds = true;
    this.togglePreviousBuilds = false;
+   this.toggleAddBuildForm = false;
 
    this.regFormData = {};
    this.builds = [];
@@ -123,7 +124,9 @@ this.userUpdate = function(data){
 // ---------------------------------
 
 
-
+// ---------------------------------
+// ****** BUILDS ******
+// ---------------------------------
    $http({
       method:"GET",
       url: url + '/builds',
@@ -131,5 +134,10 @@ this.userUpdate = function(data){
       console.log(response);
       this.builds = response.data;
    }.bind(this));
+
+   this.addNewBuild = function(newBuildFormData){
+      console.log(newBuildFormData);
+   };
+
 
 }]);
