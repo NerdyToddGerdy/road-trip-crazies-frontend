@@ -127,16 +127,38 @@ this.userUpdate = function(data){
 // ---------------------------------
 // ****** BUILDS ******
 // ---------------------------------
-   $http({
-      method:"GET",
-      url: url + '/builds',
-   }).then(function(response){
-      console.log(response);
-      this.builds = response.data;
-   }.bind(this));
+   this.findBuilds = function(){
+      $http({
+         method:"GET",
+         url: url + '/builds',
+      }).then(function(response){
+         console.log(response);
+         this.builds = response.data;
+      }.bind(this));
+   };
+   this.findBuilds();
 
    this.addNewBuild = function(newBuildFormData){
       console.log(newBuildFormData);
+      $http({
+         method: "POST",
+         url: url + '/builds',
+         data: newBuildFormData
+      }).then(function(response){
+         console.log(response);
+         this.findBuilds();
+         this.toggleAddBuildForm = false;
+      }.bind(this));
+
+   };
+   this.deleteThisBuild = function(thisBuild){
+      $http({
+         method: 'DELETE',
+         url: url + '/builds/' + thisBuild.id
+      }).then(function(response){
+         console.log(response);
+         this.findBuilds();
+      }.bind(this));
    };
 
 
