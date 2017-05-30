@@ -23,6 +23,7 @@ app.controller('MainController', ['$http', function($http){
    this.builds = [];
    this.user = {};
    this.users = [];
+   this.posts = [];
 
 // ---------------------------------
 // ******* START PAGE NAVIGATION ******
@@ -33,6 +34,7 @@ app.controller('MainController', ['$http', function($http){
       this.showLoginPage = false;
       this.showChatPage = false;
       this.showProfilePage = false;
+      this.showTo5mPage = false;
    };
    this.loadRegForm = function(){
       this.toggleLoginForm = false;
@@ -120,7 +122,7 @@ this.userUpdate = function(data){
    };
    this.findAllUsers();
 // ---------------------------------
-// ****** USERS ******
+// ****** END USERS ******
 // ---------------------------------
 
 
@@ -149,8 +151,22 @@ this.userUpdate = function(data){
          this.findBuilds();
          this.toggleAddBuildForm = false;
       }.bind(this));
-
    };
+
+   this.updateBuild = function(data, build){
+      console.log(data);
+      console.log(build);
+      $http({
+         method: "PUT",
+         url: url + '/builds/' + build.id,
+         data: data
+      }).then(function(response){
+         console.log(response);
+         this.toggleUpdateBuildForm = false;
+         this.findBuilds();
+      }.bind(this));
+   };
+
    this.deleteThisBuild = function(thisBuild){
       $http({
          method: 'DELETE',
@@ -161,5 +177,49 @@ this.userUpdate = function(data){
       }.bind(this));
    };
 
+// ---------------------------------
+// ****** END BUILDS ******
+// ---------------------------------
+
+// ---------------------------------
+// ****** POSTS ******
+// ---------------------------------
+   this.findPosts = function(){
+      $http({
+         method: 'GET',
+         url: url + '/posts'
+      }).then(function(response){
+         console.log(response);
+         this.posts = response.data;
+      }.bind(this));
+   };
+   this.findPosts();
+
+   this.createPost = function(newPostFormData, currentUser){
+      console.log(newPostFormData);
+      console.log(currentUser.id);
+      $http({
+         method: 'POST',
+         url: url + '/posts',
+         headers: {
+            Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
+         },
+         data: {
+            post:{
+               title: newPostFormData.title,
+               comment: newPostFormData.comment,
+               user_id: currentUser.id
+            }
+         }
+      }).then(function(response){
+         console.log(response);
+         this.findPosts();
+      }.bind(this));
+   };
+
+
+// ---------------------------------
+// ****** END POSTS ******
+// ---------------------------------
 
 }]);
