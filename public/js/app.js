@@ -1,9 +1,14 @@
 console.log('crazy app.js');
 
 const app = angular.module('CrazyApp', []);
+var url = '';
 
-const url= "http://localhost:3000";
-
+if(window.location.origin == "http://localhost:8000") {
+  url = "http://localhost:3000";
+}
+else {
+  url = "https://crazies-backend.herokuapp.com";
+}
 app.controller('MainController', ['$http', function($http){
    this.test="hi";
    this.showHomePage = false;
