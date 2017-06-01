@@ -3,7 +3,7 @@ console.log('crazy app.js');
 const app = angular.module('CrazyApp', []);
 var url = '';
 
-if(window.location.origin == "http://localhost:8000") {
+if(window.location.origin == "http://localhost:4040") {
   url = "http://localhost:3000";
 }
 else {
@@ -66,7 +66,8 @@ app.controller('MainController', ['$http', function($http){
          data: {
             user:{
                username: this.regformdata.username,
-               password: this.regformdata.password
+               password: this.regformdata.password,
+               is_admin: false
             }
          }
       }).then(function(response){
@@ -101,6 +102,18 @@ this.userUpdate = function(data){
       console.log(response);
       this.findAllUsers();
       this.showUserUpdate = false;
+   }.bind(this));
+};
+
+this.updateAdminStatus = function(thisUser){
+   console.log(thisUser);
+   $http({
+      method: 'PUT',
+      url: url + '/users/' + thisUser.id,
+      data: { user: { username: thisUser.username, is_admin: thisUser.is_admin, password: thisUser.password }}
+   }).then(function(response){
+      console.log(response);
+      this.findAllUsers();
    }.bind(this));
 };
 
