@@ -17,6 +17,7 @@ app.controller('MainController', ['$http', function($http){
    this.showChatPage = false;
    this.showProfilePage = false;
    this.showUserUpdate = false;
+   this.showNavBar = false;
 
    this.toggleLoginForm = true;
    this.toggleRegForm = false;
@@ -88,6 +89,7 @@ app.controller('MainController', ['$http', function($http){
          this.user = response.data.user;
          this.clearScreen();
          this.showHomePage = true;
+         this.showNavBar = true;
       }.bind(this));
    };
 

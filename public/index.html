@@ -29,7 +29,7 @@
          <h1>The Habitat Road Trip Crazies</h1>
       </header>
       <nav>
-         <ng-include class='nav-class' src="'./partials/nav.html'"></ng-include>
+         <ng-include ng-show="main.showNavBar" class='nav-class' src="'./partials/nav.html'"></ng-include>
       </nav>
       <main ng-show="main.showHomePage">
          <ng-include class='home-class' src="'./partials/home.html'"></ng-include>
