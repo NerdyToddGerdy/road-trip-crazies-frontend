@@ -12,3 +12,22 @@ The Road Trip Crazies is a group of people who volunteer a few weekends out of t
 - https://crazies-backend.herokuapp.com
 
 ## Reposotitories
+- https://github.com/Toadilicious/road-trip-crazies-frontend
+- https://github.com/Toadilicious/road-trip-crazies-api
+
+## Technologies Used
+- HTML 5
+- CSS3
+- SASS
+- Ruby on Rails
+- AngularJS
+- express
+
+## Technical Challenges
+- JWT
+- I had some trouble getting the bilds on the the profile pages and getting them to go away.
+
+## Expected Updates
+- More than mobile responsive
+- I want to make it a mobile app.
+- 
