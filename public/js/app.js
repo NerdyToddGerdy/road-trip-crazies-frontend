@@ -263,4 +263,87 @@ this.updateAdminStatus = function(thisUser){
 // ****** END POSTS ******
 // ---------------------------------
 
+
+// ---------------------------------
+// ****** My Build Join Table ******
+// ---------------------------------
+
+   this.addThisBuildToCurrentUser = function(thisBuild){
+      // console.log(person);
+      console.log(thisBuild);
+      var alreadyUsed = false;
+      for (var i = 0; i < this.user.builds.length; i++) {
+         if(this.user.builds[i].id != thisBuild.id){  //if person.builds includes thisBuild.id don't run the http request
+            console.log('not the list');
+         } else {
+            console.log('it IS in the list');
+            alreadyUsed = true;
+            break;
+         }
+      }
+      if (alreadyUsed === false) {
+         console.log('You were at ' + thisBuild.build_name);
+         $http({
+            method: 'POST',
+            url: url + '/my_builds',
+            data:{
+               user_id: this.user.id,
+               build_id: thisBuild.id
+            }
+         }).then(function(response){
+            console.log(response);
+            this.findAllUsers();
+            this.findBuilds();
+            $http({
+               method: 'GET',
+               url: url + '/users/' + this.user.id
+            }).then(function(response){
+               console.log(response);
+               this.user = response.data;
+            }.bind(this));
+         }.bind(this));
+      } console.log("IT IS ALREADY IN YOUR LIST!!!");
+   };
+
+   this.removeBuildFromMyBuilds = function(thisBuild){
+      var buildToRemove = {};
+      console.log(thisBuild);
+      console.log(this.user);
+      // GET ALL MY_BUILDS
+      $http({
+         method: 'GET',
+         url: url + '/my_builds'
+      }).then(function(response){
+         console.log(response.data);
+         this.myBuilds = response.data;
+         for (var i = 0; i < this.myBuilds.length; i++) {
+            if (thisBuild.id === this.myBuilds[i].build_id) {
+               if (this.user.id === this.myBuilds[i].user_id) {
+                  buildToRemove = this.myBuilds[i];
+                  break;
+               }
+            }
+         }
+         console.log(buildToRemove);
+         $http({
+            method: "DELETE",
+            url: url + '/my_builds/' + buildToRemove.id
+         }).then(function(response){
+            console.log(response, ' has been deleted');
+            $http({
+               method: 'GET',
+               url: url + '/users/' + this.user.id
+            }).then(function(response){
+               console.log(response);
+               this.user = response.data;
+            }.bind(this));
+         }.bind(this));
+      }.bind(this));
+   };
+
+
+// ---------------------------------
+// ****** END My Build Join Table ******
+// ---------------------------------
+
 }]);

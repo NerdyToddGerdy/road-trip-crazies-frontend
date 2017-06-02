@@ -16,4 +16,10 @@
       <button ng-click="main.deleteThisUser(eachUser);">DELETE USER</button>
    </ul>
 </div>
+<hr>
+<h4>My Builds</h4>
+<div ng-repeat="build in main.user.builds">
+   <h5>{{build.build_name}}</h5>
+   <button ng-click="main.removeBuildFromMyBuilds(build)" type="button">remove from list</button>
+</div>
 <pre ng-bind="eachUser.is_admin | json"></pre>

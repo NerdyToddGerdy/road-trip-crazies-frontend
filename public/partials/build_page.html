@@ -22,6 +22,7 @@
    </div>
    <div ng-show="main.toggleUpcomingBuilds" class="builds-list-space upcoming-builds" ng-repeat="build in main.builds | orderBy: 'start_date':reverse">
       <h3>{{build.build_name}}</h3>
+      <h5 ng-click="main.addThisBuildToCurrentUser(build)">Add to my Builds <input type="submit"></h5>
       <h5>Dates: {{build.start_date | date:format:shortDate}} - {{build.end_date | date:format:shortDate}}</h5>
       <h5>About the Family: {{build.family_information}}</h5>
       <a href="{{build.hotel_link}}">Hotel Link</a>
@@ -41,4 +42,5 @@
       </div>
       <hr>
    </div>
+
 </div>
