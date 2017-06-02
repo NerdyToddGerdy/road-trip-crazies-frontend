@@ -11,7 +11,7 @@ The Road Trip Crazies is a group of people who volunteer a few weekends out of t
 ## Database
 - https://crazies-backend.herokuapp.com
 
-## Reposotitories
+## Repositories
 - https://github.com/Toadilicious/road-trip-crazies-frontend
 - https://github.com/Toadilicious/road-trip-crazies-api
 
