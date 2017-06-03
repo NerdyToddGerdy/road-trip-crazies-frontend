@@ -5,10 +5,17 @@
 <!-- <ul id="messages" ng-repeat="chat in main.chats">
    {{chat}}
 </ul> -->
+<ul class="message-list" ng-repeat="message in main.messages">
+   <h3 class="comment">{{message.comment}}</h3>
+   <h4 class="stats">posted by: {{message.username}}</h4>
+   <h4 class="stats">posted at: {{message.created_at}}</h4>
+   <div ng-if="main.user.id == main.message.user_id">
+      <h5>Delete message</h5>
+   </div>
+   <hr>
+</ul>
 
-
-<h1>MORE TO COME</h1>
-<form class="chat-form" ng-submit="sendChatMessage()">
-   <input id="m"/>
-   <button>Send</button>
+<form ng-submit="main.sendChatMessage(message)">
+   <input type="text" ng-model="message.comment" size="30px"/>
+   <button class="button">Send</button>
 </form>

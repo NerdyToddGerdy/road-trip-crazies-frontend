@@ -97,6 +97,7 @@ app.controller('MainController', ['$http', function($http){
       }).then(function(response) {
          console.log(response);
          this.user = response.data.user;
+         this.getMessages();
          this.clearScreen();
          this.showHomePage = true;
          this.showNavBar = true;
@@ -368,6 +369,47 @@ this.updateAdminStatus = function(thisUser){
 
 // ---------------------------------
 // ****** END My Build Join Table ******
+// ---------------------------------
+
+// ---------------------------------
+// ****** MESSAGE BOARD ******
+// ---------------------------------
+this.getMessages = function(){
+   $http({
+      method: "GET",
+      url: url + '/messages'
+   }).then(function(response){
+      this.messages = response.data;
+   }.bind(this));
+};
+
+
+
+this.sendChatMessage = function(message){
+   console.log(message);
+   console.log(this.user);
+   $http({
+      method: "POST",
+      url: url + '/messages',
+      headers: {
+         Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
+      },
+      data: {
+         // comment:{
+            comment: message.comment,
+            user_id: this.user.id,
+            username: this.user.username
+         // }
+      }
+   }).then(function(response){
+      console.log(response);
+
+      this.getMessages();
+   }.bind(this));
+};
+
+// ---------------------------------
+// ****** END MESSAGE BOARD ******
 // ---------------------------------
 
 }]);
