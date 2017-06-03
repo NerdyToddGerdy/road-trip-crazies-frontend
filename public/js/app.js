@@ -82,14 +82,14 @@ app.controller('MainController', ['$http', function($http){
             }
          }
       }).then(function(response){
-         console.log(response);
+         console.log("End of Register ", response);
          this.login(response.data);
       }.bind(this));
    };
 
    // THIS USER INFORMATION
    this.login = function(userPass) {
-      console.log(userPass);
+      console.log("start login ",userPass);
       $http({
          method: 'POST',
          url: url + '/users/login',
@@ -97,6 +97,7 @@ app.controller('MainController', ['$http', function($http){
       }).then(function(response) {
          console.log(response);
          this.user = response.data.user;
+         console.log("current user ", this.user);
          this.getMessages();
          this.clearScreen();
          this.showHomePage = true;
