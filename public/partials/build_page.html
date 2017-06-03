@@ -1,13 +1,10 @@
 <div class="main-build-div">
-   <!-- <div class="build-tabs">
-      <div ng-click="main.toggleUpcomingBuilds = !main.toggleUpcomingBuilds; main.togglePreviousBuilds = !main.togglePreviousBuilds" class="upcoming-build-tab">
-         <h4>upcoming builds</h4>
-      </div>
-      <div class="previous-builds-tab">
-         <h4>previous builds</h4>
-      </div> -->
    <div ng-if="main.user.is_admin == true" class="">
-      <h4 ng-click="main.toggleAddBuildForm = !main.toggleAddBuildForm">add new build</h4>
+
+
+      <h4 class="button" id="build-btn" ng-click="main.toggleAddBuildForm = !main.toggleAddBuildForm">Add new build</h4>
+
+
       <form ng-show="main.toggleAddBuildForm" ng-submit="main.addNewBuild(newBuildFormData)"><br>
          <input type="text" ng-model="newBuildFormData.build_name" placeholder="Build Name"><br>
          <input type="date" ng-model="newBuildFormData.start_date" placeholder="Start Date"><br>
@@ -15,18 +12,26 @@
          <input type="text" ng-model="newBuildFormData.family_information" placeholder="The Family"><br>
          <input type="text" ng-model="newBuildFormData.hotel_link" placeholder="Link to Hotel's site"><br>
          <input type="text" ng-model="newBuildFormData.site_address" placeholder="House Street Address"><br>
-         <input type="submit" value="Create Build"><br>
+         <input class="button" type="submit" value="Create Build"><br>
       </form>
    </div>
    <hr>
    </div>
+
+
    <div ng-show="main.toggleUpcomingBuilds" class="builds-list-space upcoming-builds" ng-repeat="build in main.builds | orderBy: 'start_date':reverse">
       <h3>{{build.build_name}}</h3>
-      <h5 ng-click="main.addThisBuildToCurrentUser(build)">Add to my Builds <input type="submit"></h5>
+
+      <h5 id="build-btn" class="button" ng-click="main.addThisBuildToCurrentUser(build)">Add To My Builds </h5>
+      <h6 ng-show="main.showAlreadyAdded">This build is already in your list.</h6>
+      <h6 ng-show="main.showJustAdded">This build has been added</h6>
+
+
       <h5>Dates: {{build.start_date | date:format:shortDate}} - {{build.end_date | date:format:shortDate}}</h5>
       <h5>About the Family: {{build.family_information}}</h5>
       <a href="{{build.hotel_link}}">Hotel Link</a>
       <!-- <h5>{{build.hotel_link}}</h5> -->
+      <h5>Number of Crazies: {{build.users.length}}</h5>
       <div ng-if="main.user.is_admin == true" class="">
          <h5 ng-click="main.deleteThisBuild(build)">remove this build</h5>
          <h5 ng-click="main.toggleUpdateBuildForm = !main.toggleUpdateBuildForm">Update this build</h5>
@@ -37,7 +42,7 @@
             <input type="text" ng-model="updateBuildFormData.family_information" placeholder="{{build.family_information}}"><br>
             <input type="text" ng-model="updateBuildFormData.hotel_link" placeholder="build.hotel_link"><br>
             <input type="text" ng-model="updateBuildFormData.site_address" placeholder="{{build.site_address}}"><br>
-            <input type="submit" value="Update Build"><br>
+            <input id="build-btn" class="button" type="submit" value="Update Build"><br>
          </form>
       </div>
       <hr>

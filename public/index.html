@@ -3,6 +3,8 @@
    <head>
       <meta charset="utf-8">
        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.min.js"></script>
+       <base href="/">
        <!-- <script src="/socket.io/socket.io.js"></script>
        <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
        <script>
@@ -21,21 +23,21 @@
        <link rel="stylesheet" href="/css/main.css">
        <script src="./js/app.js" charset="utf-8"></script>
       <title>Road Trip Crazies</title>
-      <link href="https://fonts.googleapis.com/css?family=Comfortaa|Luckiest+Guy|Patrick+Hand" rel="stylesheet">
+      <link href="http://allfont.net/allfont.css?fonts=bauhaus-bold-bt" rel="stylesheet" type="text/css" />
       <meta name="viewport" content="width=device-width,initial-scale=1.0">
    </head>
    <body ng-controller="MainController as main">
       <header>
          <h1>The Habitat Road Trip Crazies</h1>
       </header>
-      <nav>
-         <ng-include ng-show="main.showNavBar" class='nav-class' src="'./partials/nav.html'"></ng-include>
+      <nav ng-show="main.showNavBar" >
+         <ng-include class='nav-class' src="'./partials/nav.html'"></ng-include>
       </nav>
       <main ng-show="main.showHomePage">
          <ng-include class='home-class' src="'./partials/home.html'"></ng-include>
       </main>
-      <section ng-show="main.showBuildsPage">
-         <ng-include class="build-page" src="'./partials/build_page.html'">
+      <section class="build-page" ng-show="main.showBuildsPage">
+         <ng-include src="'./partials/build_page.html'">
       </section>
       <section class="login-section" ng-show="main.showLoginPage">
          <ng-include class="login-page" src="'./partials/reg_n_login.html'">

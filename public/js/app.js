@@ -1,7 +1,17 @@
 console.log('crazy app.js');
 
-const app = angular.module('CrazyApp', []);
+const app = angular.module('CrazyApp', ['ngRoute']);
 var url = '';
+
+// myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) { //.config just runs once on load
+//     $locationProvider.html5Mode({ enabled: true }); // tell angular to use push state
+//
+//     $routeProvider.when('/url1', { //when http://localhost:3000/url1
+// 	templateUrl: 'partials/home.html', // render http://localhost:3000/partials/partial1.html
+// 	controller: 'MainController', // attach controller Ctrl1
+// 	controllerAs: 'main' // alias for Ctrl1 (like ng-controller="Ctrl1 as ctrl")
+// });
+// }]);
 
 if(window.location.origin == "http://localhost:4040") {
   url = "http://localhost:3000";
@@ -275,9 +285,13 @@ this.updateAdminStatus = function(thisUser){
       for (var i = 0; i < this.user.builds.length; i++) {
          if(this.user.builds[i].id != thisBuild.id){  //if person.builds includes thisBuild.id don't run the http request
             console.log('not the list');
+            this.showJustAdded = true;
+            this.showAlreadyAdded = false;
          } else {
             console.log('it IS in the list');
             alreadyUsed = true;
+            this.showAlreadyAdded = true;
+            this.showJustAdded = false;
             break;
          }
       }
