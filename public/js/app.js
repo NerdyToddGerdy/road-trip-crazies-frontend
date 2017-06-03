@@ -280,21 +280,30 @@ this.updateAdminStatus = function(thisUser){
 
    this.addThisBuildToCurrentUser = function(thisBuild){
       // console.log(person);
+      var theBuild = thisBuild;
+      var controller = this;
       console.log(thisBuild);
       var alreadyUsed = false;
       for (var i = 0; i < this.user.builds.length; i++) {
          if(this.user.builds[i].id != thisBuild.id){  //if person.builds includes thisBuild.id don't run the http request
             console.log('not the list');
+            thisBuild.toggleBuildNotification = true;
             this.showJustAdded = true;
             this.showAlreadyAdded = false;
          } else {
             console.log('it IS in the list');
             alreadyUsed = true;
+            thisBuild.toggleBuildNotification = true;
             this.showAlreadyAdded = true;
             this.showJustAdded = false;
             break;
          }
       }
+      setTimeout(function(){
+         console.log(theBuild);
+         theBuild.toggleBuildNotification = false;
+         controller.findBuilds();
+      }, 5000);
       if (alreadyUsed === false) {
          console.log('You were at ' + thisBuild.build_name);
          $http({
@@ -307,7 +316,7 @@ this.updateAdminStatus = function(thisUser){
          }).then(function(response){
             console.log(response);
             this.findAllUsers();
-            this.findBuilds();
+            // this.findBuilds();
             $http({
                method: 'GET',
                url: url + '/users/' + this.user.id
@@ -350,6 +359,7 @@ this.updateAdminStatus = function(thisUser){
             }).then(function(response){
                console.log(response);
                this.user = response.data;
+               this.findBuilds();
             }.bind(this));
          }.bind(this));
       }.bind(this));

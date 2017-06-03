@@ -23,8 +23,10 @@
       <h3>{{build.build_name}}</h3>
 
       <h5 id="build-btn" class="button" ng-click="main.addThisBuildToCurrentUser(build)">Add To My Builds </h5>
-      <h6 ng-show="main.showAlreadyAdded">This build is already in your list.</h6>
-      <h6 ng-show="main.showJustAdded">This build has been added</h6>
+      <div ng-show="build.toggleBuildNotification">
+         <h6 ng-show="main.showAlreadyAdded">This build is already in your list.</h6>
+         <h6 ng-show="main.showJustAdded">This build has been added</h6>
+      </div>
 
 
       <h5>Dates: {{build.start_date | date:format:shortDate}} - {{build.end_date | date:format:shortDate}}</h5>

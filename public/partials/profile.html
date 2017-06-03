@@ -1,25 +1,30 @@
 
 <h1>{{main.user.username}}</h1>
+
 <h3 ng-click="main.showUserUpdate = !main.showUserUpdate">Update user</h3>
 <form ng-show="main.showUserUpdate" ng-submit="main.userUpdate(updateUserFormData)">
    <input type="text" ng-model="updateUserFormData.username" placeholder="{{main.user.username}}"/><br>
    <input type="password" ng-model="updateUserFormData.password" placeholder="Pasword"/><br>
    <button type="submit">Update</button>
 </form>
-<div class="" ng-if="main.user.is_admin == true">
-   <ul ng-repeat="eachUser in main.users">
-      <li>{{eachUser.username}}</li>
-      <div ng-click="main.updateAdminStatus(eachUser)" class="">
-         is admin: <input type="checkbox"  placeholder="{{eachUser.is_admin}}" ng-model="eachUser.is_admin" name="group" id="{{eachUser.id}}">
-      </div>
-      <li>{{eachUser.is_admin}}</li>
-      <button ng-click="main.deleteThisUser(eachUser);">DELETE USER</button>
-   </ul>
-</div>
+
 <hr>
 <h4>My Builds</h4>
 <div ng-repeat="build in main.user.builds">
    <h5>{{build.build_name}}</h5>
    <button ng-click="main.removeBuildFromMyBuilds(build)" type="button">remove from list</button>
 </div>
+
+<div  ng-if="main.user.is_admin == true">
+   <h3 ng-click="main.showUsersToAdmin = !main.showUsersToAdmin">Users</h3>
+   <ul ng-show="main.showUsersToAdmin" ng-repeat="eachUser in main.users">
+      <li>{{eachUser.username}}</li>
+      <div ng-click="main.updateAdminStatus(eachUser)" class="">
+         is admin: <input type="checkbox"  placeholder="{{eachUser.is_admin}}" ng-model="eachUser.is_admin" name="group" id="{{eachUser.id}}">
+      </div>
+      <!-- <li>{{eachUser.is_admin}}</li> -->
+      <button ng-click="main.deleteThisUser(eachUser);">DELETE USER</button>
+   </ul>
+</div>
+
 <pre ng-bind="eachUser.is_admin | json"></pre>
