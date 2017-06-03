@@ -34,6 +34,7 @@ app.controller('MainController', ['$http', function($http){
    this.toggleUpcomingBuilds = true;
    this.togglePreviousBuilds = false;
    this.toggleAddBuildForm = false;
+   this.toggleLoginError = false;
 
    this.regFormData = {};
    this.builds = [];
@@ -98,10 +99,19 @@ app.controller('MainController', ['$http', function($http){
          console.log(response);
          this.user = response.data.user;
          console.log("current user ", this.user);
-         this.getMessages();
-         this.clearScreen();
-         this.showHomePage = true;
-         this.showNavBar = true;
+         if (this.user) {
+            this.getMessages();
+            this.clearScreen();
+            this.showHomePage = true;
+            this.showNavBar = true;
+         } else {
+            var controller = this;
+            this.toggleLoginError = true;
+            setTimeout(function(){
+               console.log(controller.toggleLoginError);
+               controller.toggleLoginError = false;
+            }, 5000);
+         }
       }.bind(this));
    };
 

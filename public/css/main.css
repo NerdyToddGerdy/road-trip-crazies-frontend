@@ -173,6 +173,8 @@ body {
           text-align: center; }
         body .login-body h4 {
           margin: 0 auto; }
+      body #login-error {
+        color: #d95210; }
       body .build-page {
         margin: 0 2%; }
       body .builds-list-space h5 {
