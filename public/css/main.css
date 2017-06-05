@@ -3,7 +3,6 @@ html {
 
 body {
   font-family: "Bauhaus Bold BT", arial;
-  max-width: 599px;
   height: 96%; }
   body .nav-class {
     display: flex;
@@ -27,14 +26,15 @@ body {
       margin: 0; }
       body .home-class div h2 {
         margin: 0; }
+  body .button {
+    border: 2px solid black;
+    background: #d95210;
+    border-radius: 5px; }
   @media (max-width: 599px) {
     body {
+      max-width: 599px;
       background: #4abdac;
       margin: 0; }
-      body .button {
-        border: 2px solid black;
-        background: #d95210;
-        border-radius: 5px; }
       body #trailer {
         width: 150%;
         height: 163%;
@@ -218,14 +218,131 @@ body {
           padding: 10px; }
       body h5 {
         margin: 0; } }
-  @media (min-width: 600px) {
-    body {
-      background: green; } }
-  @media (min-width: 900px) {
-    body {
-      background: orange; } }
-  @media (min-width: 1200px) {
-    body {
-      background: red; } }
+
+@media (min-width: 600px) {
+  html {
+    width: 100%; }
+
+  body {
+    width: 100%;
+    background: #4abdac;
+    margin: 0; }
+    body header {
+      width: 100%; }
+      body header h1 {
+        width: 100%;
+        text-align: center;
+        font-size: 3em; }
+
+  .login-section .login-page .login-tabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
+    .login-section .login-page .login-tabs h4 {
+      font-size: x-large;
+      margin: 0; }
+  .login-section .login-page .login-body .login-form, .login-section .login-page .login-body .registration-form {
+    width: 50%;
+    margin: 0 auto; }
+    .login-section .login-page .login-body .login-form h3, .login-section .login-page .login-body .registration-form h3 {
+      text-align: center;
+      font-size: xx-large;
+      margin: 0 auto; }
+    .login-section .login-page .login-body .login-form label, .login-section .login-page .login-body .registration-form label {
+      font-size: 2em; }
+    .login-section .login-page .login-body .login-form input, .login-section .login-page .login-body .registration-form input {
+      display: inline-block;
+      float: right;
+      height: 2em; }
+  .login-section .login-page .login-body h4 {
+    display: inline-block;
+    margin: 4%; }
+  .login-section .login-page .login-body img {
+    width: 100%; }
+
+  nav .nav-class {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
+    nav .nav-class div h3 {
+      text-align: center;
+      margin: 0;
+      font-size: 2em; }
+
+  main {
+    height: 83.7%; }
+    main .home-class {
+      width: 100%; }
+      main .home-class .middle-image {
+        height: 50%;
+        width: 50%; }
+      main .home-class .top-image {
+        width: 50%;
+        height: 50.1%;
+        overflow: hidden;
+        display: grid; }
+        main .home-class .top-image h2 {
+          position: absolute;
+          color: #d95210;
+          top: 56%;
+          left: 17%; }
+      main .home-class #trailer {
+        position: relative;
+        left: -73%;
+        top: -27%; }
+      main .home-class .profile-img {
+        width: 50%;
+        height: 40.3%;
+        overflow: hidden;
+        display: grid;
+        position: absolute;
+        left: 50%;
+        top: 19.6%; }
+        main .home-class .profile-img #caution-tie {
+          position: absolute;
+          top: -35%;
+          left: -5%; }
+        main .home-class .profile-img h2 {
+          position: absolute;
+          color: #d95210;
+          top: 90%;
+          right: 35%; }
+      main .home-class .to5m-img {
+        width: 50%;
+        height: 40%;
+        overflow: hidden;
+        display: grid;
+        position: absolute;
+        top: 59.9%; }
+        main .home-class .to5m-img #Tom {
+          position: absolute;
+          top: -38%;
+          width: 100%; }
+        main .home-class .to5m-img h2 {
+          position: absolute;
+          color: #d95210;
+          top: 85%;
+          left: 8%; }
+      main .home-class .bottom-image {
+        width: 50%;
+        height: 40%;
+        overflow: hidden;
+        display: grid;
+        position: absolute;
+        top: 59.9%;
+        left: 50%; }
+        main .home-class .bottom-image #group-shot {
+          position: absolute;
+          width: 129%;
+          right: -17%; }
+        main .home-class .bottom-image h2 {
+          position: absolute;
+          color: #d95210;
+          top: 16%;
+          right: 30%; } }
+@media (min-width: 600px) and (min-width: 900px) {
+  background: orange; }
+@media (min-width: 600px) and (min-width: 1200px) {
+  background: red; }
 
 /*# sourceMappingURL=main.css.map */
