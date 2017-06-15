@@ -1,7 +1,17 @@
 console.log('crazy app.js');
+// var cloudinary = require('cloudinary'),
+//     fs         = require('fs')
 
 const app = angular.module('CrazyApp', ['ngRoute']);
 var url = '';
+
+
+// app.post('/upload', function(req, res){
+//    var imageStream = fs.createReadStream(req.files.image.path, { encoding: 'binary' }),
+//        cloudStream = cloudinary.uploader.upload_stream(function() { res.redirect('/'); });
+//
+//   imageStream.on('data', cloudStream.write).on('end', cloudStream.end);
+// });
 
 // myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) { //.config just runs once on load
 //     $locationProvider.html5Mode({ enabled: true }); // tell angular to use push state
