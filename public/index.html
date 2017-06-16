@@ -6,7 +6,6 @@
        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.min.js"></script>
        <base href="/">
        <link rel="stylesheet" href="/css/main.css">
-       <script src="./js/app.js" charset="utf-8"></script>
       <title>Road Trip Crazies</title>
       <link href="https://allfont.net/allfont.css?fonts=bauhaus-bold-bt" rel="stylesheet" type="text/css" />
       <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -15,6 +14,7 @@
       <header>
          <h1>The Habitat Road Trip Crazies</h1>
       </header>
+
       <nav ng-show="main.showNavBar" >
          <ng-include class='nav-class' src="'./partials/nav.html'"></ng-include>
       </nav>
@@ -31,6 +31,18 @@
          <ng-include src="'./partials/chat.html'"/>
       </section>
       <section class="profile-section" ng-show="main.showProfilePage">
+         <h1>{{main.user.username}}</h1>
+
+         <h1>********** THIS IS A TEST **********</h1>
+         <img src="../images/Tom.jpg" id="img-preview" />
+         <div ng-show="main.showUserUpdate" class="user-photo">
+            <label class="file-upload-container" for="file-upload">
+               <input type="file" id="file-upload" style="display:none;">
+               Select an Image
+            </label>
+         </div>
+         <h1>********** THIS IS A TEST **********</h1>
+
          <ng-include src="'./partials/profile.html'"/>
       </section>
       <section class="to5m-section" ng-show="main.showTo5mPage">
@@ -39,5 +51,7 @@
       <section class="footer-spacer">
 
       </section>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script src="./js/app.js" charset="utf-8"></script>
    </body>
 </html>

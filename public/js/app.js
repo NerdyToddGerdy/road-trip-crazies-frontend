@@ -1,17 +1,12 @@
 console.log('crazy app.js');
-// var cloudinary = require('cloudinary'),
-//     fs         = require('fs')
+
+var CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/toddles/upload';
+var CLOUDINARY_UPLOAD_PRESET = 'mbsppfj1'
+
 
 const app = angular.module('CrazyApp', ['ngRoute']);
 var url = '';
 
-
-// app.post('/upload', function(req, res){
-//    var imageStream = fs.createReadStream(req.files.image.path, { encoding: 'binary' }),
-//        cloudStream = cloudinary.uploader.upload_stream(function() { res.redirect('/'); });
-//
-//   imageStream.on('data', cloudStream.write).on('end', cloudStream.end);
-// });
 
 // myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) { //.config just runs once on load
 //     $locationProvider.html5Mode({ enabled: true }); // tell angular to use push state
@@ -51,6 +46,7 @@ app.controller('MainController', ['$http', function($http){
    this.user = {};
    this.users = [];
    this.posts = [];
+   this.photo = '';
 
 // ---------------------------------
 // ******* START PAGE NAVIGATION ******
@@ -429,8 +425,41 @@ this.sendChatMessage = function(message){
    }.bind(this));
 };
 
+var imgPreview = document.getElementById('img-preview');
+var fileUpload = document.getElementById('file-upload');
+
+
 // ---------------------------------
 // ****** END MESSAGE BOARD ******
 // ---------------------------------
 
+
+// console.log(document);
+fileUpload.addEventListener('change', function(event){
+   var file = event.target.files[0];
+   var formData = new FormData();
+   formData.append('file', file);
+   formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+
+   axios({
+      url: CLOUDINARY_URL,
+      method: 'POST',
+      headers: {
+         'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      data: formData
+   }).then(function(res){
+      console.log(res);
+      imgPreview.src = res.data.secure_url;
+      this.photo = res.data.secure_url;
+      console.log(this.photo);
+   }.bind(this)).catch(function(err){
+      console.log(err);
+   });
+
+   });
+// setTimeout(function(){
+//    console.log(document);
+// //
+// }, 5000)
 }]);
