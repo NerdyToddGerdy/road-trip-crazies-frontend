@@ -214,6 +214,7 @@ body {
       body .chat-form {
         background: #000;
         padding: 3px;
+        position: fixed;
         bottom: 0%;
         width: 98.8%; }
         body .chat-form input {
@@ -350,9 +351,67 @@ body {
           color: #d95210;
           top: 16%;
           right: 30%; } }
-@media (min-width: 600px) and (min-width: 900px) {
-  background: orange; }
-@media (min-width: 600px) and (min-width: 1200px) {
+@media (min-width: 900px) {
+  nav {
+    box-shadow: 0px 0px 19px 1px #333;
+    background-color: #EABE7C; }
+
+  main .home-class .middle-section .profile-img {
+    width: 53.1%;
+    overflow: hidden;
+    display: grid;
+    height: 39.3%;
+    position: absolute;
+    left: 50%;
+    top: 21%; }
+    main .home-class .middle-section .profile-img #caution-tie {
+      top: -48%;
+      width: 100%; }
+    main .home-class .middle-section .profile-img h2 {
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.7);
+      height: 30px;
+      top: 89%;
+      width: 100%;
+      right: 0%;
+      left: 0.3px;
+      border-left: 0.3px solid black; }
+  main .home-class .middle-section .to5m-img #Tom {
+    top: -106%; }
+  main .home-class .middle-section .to5m-img h2 {
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 30px;
+    top: 90%;
+    width: 100%;
+    right: 0%;
+    left: -0.3px;
+    border-right: 0.3px solid black; }
+  main .home-class .top-image #trailer {
+    left: -46%;
+    top: -37%; }
+  main .home-class .top-image h2 {
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 30px;
+    top: 56%;
+    width: 50%;
+    right: 0%;
+    left: -0.3px;
+    border-right: 0.3px solid black; }
+  main .home-class .bottom-image #group-shot {
+    left: -12%;
+    top: -36%; }
+  main .home-class .bottom-image h2 {
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 30px;
+    top: 90%;
+    width: 100%;
+    right: 0%;
+    left: 0.3px;
+    border-left: 0.3px solid black; } }
+@media (min-width: 900px) and (min-width: 1200px) {
   background: red; }
 
 /*# sourceMappingURL=main.css.map */

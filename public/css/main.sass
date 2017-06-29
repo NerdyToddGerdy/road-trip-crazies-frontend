@@ -11,7 +11,7 @@
    @else if $size == desktop-up
       @media (min-width: 1200px)
          @content
-// above code aquired from 'https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862'
+// above code aquired from "https//medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862" --> needed to delete the colon due to error caused in .sass file. Strange.
 
 $color-one: #4abdac
 $color-two: #60492c
@@ -257,7 +257,7 @@ body
       .chat-form
          background: #000
          padding: 3px
-         position:fixed
+         position: fixed
          bottom: 0%
          width: 98.8%
          input
@@ -410,8 +410,81 @@ body
                right: 30%
 
 
-   @include for-size(tablet-landscape-up)
-      background: orange
+@include for-size(tablet-landscape-up)
+   nav
+      box-shadow: 0px 0px 19px 1px #333
+      background-color: $color-three
+   main
+      .home-class
+         .middle-section
+
+            .profile-img
+
+               width: 53.1%
+               overflow: hidden
+               display: grid
+               height: 39.3%
+               position: absolute
+               left: 50%
+               top: 21%
+               #caution-tie
+                  top: -48%
+                  // left: -1%
+                  width: 100%
+               h2
+                  // position: relative
+                  z-index: 1
+                  background-color: rgba(255, 255, 255, .7)
+                  height: 30px
+                  top: 89%
+                  width: 100%
+                  right: 0%
+                  left: .3px
+                  border-left: .3px solid black
+            .to5m-img
+               #Tom
+                  top: -106%
+               h2
+                  z-index: 1
+                  background-color: rgba(255, 255, 255, .7)
+                  height: 30px
+                  top: 90%
+                  width: 100%
+                  right: 0%
+                  left: -.3px
+                  border-right: .3px solid black
+
+         .top-image
+            #trailer
+               left: -46%
+               top: -37%
+            h2
+               // position: relative
+               z-index: 1
+               background-color: rgba(255, 255, 255, .7)
+               height: 30px
+               top: 56%
+               width: 50%
+               right: 0%
+               left: -.3px
+               border-right: .3px solid black
+
+         .bottom-image
+            #group-shot
+               left: -12%
+               // width: 100%
+               top: -36%
+            h2
+               // position: relative
+               z-index: 1
+               background-color: rgba(255, 255, 255, .7)
+               height: 30px
+               top: 90%
+               width: 100%
+               right: 0%
+               left: .3px
+               border-left: .3px solid black
+
 
    @include for-size(desktop-up)
       background: red
