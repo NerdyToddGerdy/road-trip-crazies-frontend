@@ -413,5 +413,59 @@ body
    @include for-size(tablet-landscape-up)
       background: orange
 
-   @include for-size(desktop-up)
-      background: red
+@include for-size(desktop-up)
+   body
+      margin: 0 auto
+      .login-tabs
+         background: white
+         opacity: 0.8
+         padding: 8px 0
+      h4:hover
+         color: #333
+      .login-body
+         .login-form
+            h3
+               padding-top: 2%
+         h4
+            text-align: center
+      .home-class
+         display: block
+         justify-content: space-around
+         .top-image
+            #trailer
+               width: 180%
+            h2
+               background: rgba(255,255,255,0.6)
+               width: 50%
+               top: 56.25%
+               left: 0%
+         .middle-section
+            .middle-section-image
+               width: 50%
+            .profile-img
+               #caution-tie
+                  position: absolute
+                  top: -53%
+                  left: 0
+                  width: 100%
+               h2
+                  background: rgba(255,255,255,0.6)
+                  // width: 50%
+                  // top: 56.25%
+                  // left: 0%
+            .to5m-img
+               #Tom
+                  position: absolute
+                  top: -121%
+               #Tom-img
+                  position: absolute
+                  right: 9%
+                  top: 90%
+         .bottom-image
+            #group-shot
+               width: 106%
+               right: -6%
+            h2
+               position: absolute
+               top: 90%
+               background-color: white
