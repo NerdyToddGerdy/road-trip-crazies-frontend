@@ -324,6 +324,9 @@ body
    // Nav Bar section
    // ****************
    nav
+      box-shadow: 0px 0px 19px 1px #333
+      background-color: $color-three
+      z-index: 100
       .nav-class
          display: flex
          flex-direction: row
@@ -346,35 +349,47 @@ body
             width: 50%
          .top-image
             width: 50%
-            height: 50.1%
+            height: 55.1%
             overflow: hidden
             display: grid
             h2
                position: absolute
                color: $color-five
-               top: 56%
-               left: 17%
+               top: 56.9%
+               left: 0%
+               z-index: 1
+               background-color: rgba(255, 255, 255, .7)
+               height: 30px
+               width: 50%
+               right: 0%
+               border-right: .3px solid black
          #trailer
             position: relative
-            left: -73%
-            top: -27%
+            left: -75%
+            top: -9%
          .profile-img
             width: 50%
-            height: 40.3%
+            height: 46.3%
             overflow: hidden
-            display: grid
+            // display: grid
             position: absolute
             left: 50%
-            top: 19.6%
+            top: 15.6%
             #caution-tie
                position: absolute
-               top: -35%
+               top: -30%
                left: -5%
             h2
                position: absolute
                color: $color-five
-               top: 90%
-               right: 35%
+               top: 89.3%
+               // right: 35%
+               z-index: 1
+               background-color: rgba(255, 255, 255, .7)
+               height: 30px
+               width: 100%
+               left: .3px
+               border-left: .3px solid black
          .to5m-img
             width: 50%
             height: 40%
@@ -384,13 +399,19 @@ body
             top: 59.9%
             #Tom
                position: absolute
-               top: -38%
+               top: -26%
                width: 100%
             h2
                position: absolute
                color: $color-five
-               top: 85%
-               left: 8%
+               top: 85.3%
+               left: 0%
+               z-index: 1
+               background-color: rgba(255, 255, 255, .7)
+               height: 30px
+               width: 100%
+               // left: .3px
+               border-right: .3px solid black
          .bottom-image
             width: 50%
             height: 40%
@@ -401,13 +422,20 @@ body
             left: 50%
             #group-shot
                position: absolute
-               width: 129%
+               width: 150%
                right: -17%
             h2
                position: absolute
                color: $color-five
-               top: 16%
-               right: 30%
+               top: 85.3%
+               // right: 30%
+               left: 0%
+               z-index: 1
+               background-color: rgba(255, 255, 255, .7)
+               height: 30px
+               width: 100%
+               // left: .3px
+               border-left: .3px solid black
 
 
 @include for-size(tablet-landscape-up)
