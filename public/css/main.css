@@ -355,7 +355,7 @@ body {
           border-right: 0.3px solid black; }
       main .home-class .bottom-image {
         width: 50%;
-        height: 41%;
+        height: 40.1%;
         overflow: hidden;
         display: grid;
         position: absolute;
@@ -368,13 +368,15 @@ body {
         main .home-class .bottom-image h2 {
           position: absolute;
           color: #d95210;
-          top: 91.1%;
+          top: 92.9%;
           left: 0%;
           z-index: 1;
           background-color: rgba(255, 255, 255, 0.7);
           height: 30px;
           width: 100%;
-          border-left: 0.3px solid black; } }
+          border-left: 0.3px solid black; }
+
+  width: 100%; }
 @media (min-width: 900px) {
   nav {
     box-shadow: 0px 0px 19px 1px #333;
@@ -430,7 +432,7 @@ body {
     z-index: 1;
     background-color: rgba(255, 255, 255, 0.7);
     height: 30px;
-    top: 89%;
+    top: 91%;
     width: 100%;
     right: 0%;
     left: 0.3px;
