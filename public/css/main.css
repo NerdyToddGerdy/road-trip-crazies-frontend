@@ -334,7 +334,7 @@ body {
           border-left: 0.3px solid black; }
       main .home-class .to5m-img {
         width: 50%;
-        height: 40%;
+        height: 40.1%;
         overflow: hidden;
         display: grid;
         position: absolute;
@@ -346,7 +346,7 @@ body {
         main .home-class .to5m-img h2 {
           position: absolute;
           color: #d95210;
-          top: 85.3%;
+          top: 93.3%;
           left: 0%;
           z-index: 1;
           background-color: rgba(255, 255, 255, 0.7);
@@ -355,7 +355,7 @@ body {
           border-right: 0.3px solid black; }
       main .home-class .bottom-image {
         width: 50%;
-        height: 40%;
+        height: 40.1%;
         overflow: hidden;
         display: grid;
         position: absolute;
@@ -363,18 +363,20 @@ body {
         left: 50%; }
         main .home-class .bottom-image #group-shot {
           position: absolute;
-          width: 150%;
-          right: -17%; }
+          width: 163%;
+          right: -39%; }
         main .home-class .bottom-image h2 {
           position: absolute;
           color: #d95210;
-          top: 85.3%;
+          top: 92.9%;
           left: 0%;
           z-index: 1;
           background-color: rgba(255, 255, 255, 0.7);
           height: 30px;
           width: 100%;
-          border-left: 0.3px solid black; } }
+          border-left: 0.3px solid black; }
+
+  width: 100%; }
 @media (min-width: 900px) {
   nav {
     box-shadow: 0px 0px 19px 1px #333;
@@ -406,7 +408,7 @@ body {
     z-index: 1;
     background-color: rgba(255, 255, 255, 0.7);
     height: 30px;
-    top: 90%;
+    top: 91%;
     width: 100%;
     right: 0%;
     left: -0.3px;
@@ -424,17 +426,19 @@ body {
     left: -0.3px;
     border-right: 0.3px solid black; }
   main .home-class .bottom-image #group-shot {
-    left: -12%;
-    top: -36%; }
+    left: -28%;
+    top: -45%; }
   main .home-class .bottom-image h2 {
     z-index: 1;
     background-color: rgba(255, 255, 255, 0.7);
     height: 30px;
-    top: 90%;
+    top: 91%;
     width: 100%;
     right: 0%;
     left: 0.3px;
-    border-left: 0.3px solid black; } }
+    border-left: 0.3px solid black; }
+
+  width: 100%; }
 @media (min-width: 900px) and (min-width: 1200px) {
   background: red; }
 
