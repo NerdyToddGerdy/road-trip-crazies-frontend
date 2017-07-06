@@ -439,7 +439,51 @@ body {
     border-left: 0.3px solid black; }
 
   width: 100%; }
-@media (min-width: 900px) and (min-width: 1200px) {
-  background: red; }
+@media (min-width: 1200px) {
+  body {
+    margin: 0 auto; }
+    body .login-tabs {
+      background: white;
+      opacity: 0.8;
+      padding: 8px 0; }
+    body h4:hover {
+      color: #333; }
+    body .login-body .login-form h3 {
+      padding-top: 2%; }
+    body .login-body h4 {
+      text-align: center; }
+    body .home-class {
+      display: block;
+      justify-content: space-around; }
+      body .home-class .top-image #trailer {
+        width: 180%; }
+      body .home-class .top-image h2 {
+        background: rgba(255, 255, 255, 0.6);
+        width: 50%;
+        top: 56.25%;
+        left: 0%; }
+      body .home-class .middle-section .middle-section-image {
+        width: 50%; }
+      body .home-class .middle-section .profile-img #caution-tie {
+        position: absolute;
+        top: -53%;
+        left: 0;
+        width: 100%; }
+      body .home-class .middle-section .profile-img h2 {
+        background: rgba(255, 255, 255, 0.6); }
+      body .home-class .middle-section .to5m-img #Tom {
+        position: absolute;
+        top: -121%; }
+      body .home-class .middle-section .to5m-img #Tom-img {
+        position: absolute;
+        right: 9%;
+        top: 90%; }
+      body .home-class .bottom-image #group-shot {
+        width: 106%;
+        right: -6%; }
+      body .home-class .bottom-image h2 {
+        position: absolute;
+        top: 90%;
+        background-color: white; } }
 
 /*# sourceMappingURL=main.css.map */

@@ -33,15 +33,16 @@
       <section class="profile-section" ng-show="main.showProfilePage">
          <h1>{{main.user.username}}</h1>
 
-         <h1>********** THIS IS A TEST **********</h1>
+         <!-- <h1>********** THIS IS A TEST **********</h1> -->
          <img src="../images/Tom.jpg" id="img-preview" />
+         <h3 ng-click="main.showUserUpdate = !main.showUserUpdate">Update user</h3>
          <div ng-show="main.showUserUpdate" class="user-photo">
             <label class="file-upload-container" for="file-upload">
                <input type="file" id="file-upload" style="display:none;">
                Select an Image
             </label>
          </div>
-         <h1>********** THIS IS A TEST **********</h1>
+         <!-- <h1>********** THIS IS A TEST **********</h1> -->
 
          <ng-include src="'./partials/profile.html'"/>
       </section>
