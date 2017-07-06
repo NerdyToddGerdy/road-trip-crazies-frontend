@@ -11,7 +11,7 @@
    @else if $size == desktop-up
       @media (min-width: 1200px)
          @content
-// above code aquired from 'https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862'
+// above code aquired from "https//medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862" --> needed to delete the colon due to error caused in .sass file. Strange.
 
 $color-one: #4abdac
 $color-two: #60492c
@@ -257,7 +257,7 @@ body
       .chat-form
          background: #000
          padding: 3px
-         position:fixed
+         position: fixed
          bottom: 0%
          width: 98.8%
          input
@@ -326,6 +326,9 @@ body
    // Nav Bar section
    // ****************
    nav
+      box-shadow: 0px 0px 19px 1px #333
+      background-color: $color-three
+      z-index: 100
       .nav-class
          display: flex
          flex-direction: row
@@ -348,54 +351,72 @@ body
             width: 50%
          .top-image
             width: 50%
-            height: 50.1%
+            height: 55.1%
             overflow: hidden
             display: grid
             h2
                position: absolute
                color: $color-five
-               top: 56%
-               left: 17%
+               top: 56.9%
+               left: 0%
+               z-index: 1
+               background-color: rgba(255, 255, 255, .7)
+               height: 30px
+               width: 50%
+               right: 0%
+               border-right: .3px solid black
          #trailer
             position: relative
-            left: -73%
-            top: -27%
+            left: -75%
+            top: -9%
          .profile-img
             width: 50%
-            height: 40.3%
+            height: 46.3%
             overflow: hidden
-            display: grid
+            // display: grid
             position: absolute
             left: 50%
-            top: 19.6%
+            top: 15.6%
             #caution-tie
                position: absolute
-               top: -35%
+               top: -30%
                left: -5%
             h2
                position: absolute
                color: $color-five
-               top: 90%
-               right: 35%
+               top: 89.3%
+               // right: 35%
+               z-index: 1
+               background-color: rgba(255, 255, 255, .7)
+               height: 30px
+               width: 100%
+               left: .3px
+               border-left: .3px solid black
          .to5m-img
             width: 50%
-            height: 40%
+            height: 40.1%
             overflow: hidden
             display: grid
             position: absolute
             top: 59.9%
             #Tom
                position: absolute
-               top: -38%
+               top: -26%
                width: 100%
             h2
                position: absolute
                color: $color-five
-               top: 85%
-               left: 8%
+               top: 93.3%
+               left: 0%
+               z-index: 1
+               background-color: rgba(255, 255, 255, .7)
+               height: 30px
+               width: 100%
+               // left: .3px
+               border-right: .3px solid black
          .bottom-image
             width: 50%
-            height: 40%
+            height: 40.1%
             overflow: hidden
             display: grid
             position: absolute
@@ -403,17 +424,97 @@ body
             left: 50%
             #group-shot
                position: absolute
-               width: 129%
-               right: -17%
+               width: 163%
+               right: -39%
             h2
                position: absolute
                color: $color-five
-               top: 16%
-               right: 30%
+               top: 92.9%
+               // right: 30%
+               left: 0%
+               z-index: 1
+               background-color: rgba(255, 255, 255, .7)
+               height: 30px
+               width: 100%
+               // left: .3px
+               border-left: .3px solid black
+   width: 100%
 
+@include for-size(tablet-landscape-up)
+   nav
+      box-shadow: 0px 0px 19px 1px #333
+      background-color: $color-three
+   main
+      .home-class
+         .middle-section
 
-   @include for-size(tablet-landscape-up)
-      background: orange
+            .profile-img
+
+               width: 53.1%
+               overflow: hidden
+               display: grid
+               height: 39.3%
+               position: absolute
+               left: 50%
+               top: 21%
+               #caution-tie
+                  top: -48%
+                  // left: -1%
+                  width: 100%
+               h2
+                  // position: relative
+                  z-index: 1
+                  background-color: rgba(255, 255, 255, .7)
+                  height: 30px
+                  top: 89%
+                  width: 100%
+                  right: 0%
+                  left: .3px
+                  border-left: .3px solid black
+            .to5m-img
+               #Tom
+                  top: -106%
+               h2
+                  z-index: 1
+                  background-color: rgba(255, 255, 255, .7)
+                  height: 30px
+                  top: 91%
+                  width: 100%
+                  right: 0%
+                  left: -.3px
+                  border-right: .3px solid black
+
+         .top-image
+            #trailer
+               left: -46%
+               top: -37%
+            h2
+               // position: relative
+               z-index: 1
+               background-color: rgba(255, 255, 255, .7)
+               height: 30px
+               top: 56%
+               width: 50%
+               right: 0%
+               left: -.3px
+               border-right: .3px solid black
+
+         .bottom-image
+            #group-shot
+               left: -28%
+               // width: 100%
+               top: -45%
+            h2
+               // position: relative
+               z-index: 1
+               background-color: rgba(255, 255, 255, .7)
+               height: 30px
+               top: 91%
+               width: 100%
+               right: 0%
+               left: .3px
+               border-left: .3px solid black
+   width: 100%
 
    @include for-size(desktop-up)
       background: red
