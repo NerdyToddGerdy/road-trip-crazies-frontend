@@ -383,20 +383,29 @@ body {
         left: 0;
         width: 100%; }
       body .home-class .middle-section .profile-img h2 {
-        background: rgba(255, 255, 255, 0.6); }
+        background: rgba(255, 255, 255, 0.6);
+        width: 100%;
+        top: 91.25%;
+        left: 0%; }
       body .home-class .middle-section .to5m-img #Tom {
         position: absolute;
         top: -121%; }
       body .home-class .middle-section .to5m-img #Tom-img {
         position: absolute;
         right: 9%;
-        top: 90%; }
+        top: 92%; }
+      body .home-class .middle-section .to5m-img h2 {
+        background: rgba(255, 255, 255, 0.6);
+        width: 100%;
+        top: 92%;
+        left: 0%; }
       body .home-class .bottom-image #group-shot {
         width: 106%;
         right: -6%; }
       body .home-class .bottom-image h2 {
-        position: absolute;
-        top: 90%;
-        background-color: white; } }
+        background: rgba(255, 255, 255, 0.6);
+        width: 100%;
+        top: 92%;
+        left: 0%; } }
 
 /*# sourceMappingURL=main.css.map */
