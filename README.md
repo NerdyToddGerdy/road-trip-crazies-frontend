@@ -25,7 +25,7 @@ The Road Trip Crazies is a group of people who volunteer a few weekends out of t
 
 ## Technical Challenges
 - JWT
-- I had some trouble getting the bilds on the the profile pages and getting them to go away.
+- I had some trouble getting the builds on the the profile pages and getting them to go away.
 
 ## Expected Updates
 - More than mobile responsive
