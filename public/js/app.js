@@ -123,11 +123,17 @@ app.controller('MainController', ['$http', function($http){
 
 // UPDATE USER INFO
 this.userUpdate = function(data){
+  console.log("******", this.photo);
+  data.photo = this.photo;
    console.log(data);
    $http({
       method: 'PUT',
       url: url + '/users/' + this.user.id,
-      data: { user: { username: data.username, password: data.password }}
+      data: { user: {
+        username: data.username,
+        password: data.password,
+        photo: data.photo
+       }}
    }).then(function(response){
       console.log(response);
       this.findAllUsers();
@@ -164,8 +170,9 @@ this.updateAdminStatus = function(thisUser){
          method: "GET",
          url: url + '/users'
       }).then(function(response){
+        console.log(response);
          this.users = response.data;
-         console.log(this.users);
+        //  console.log(this.users);
       }.bind(this));
    };
    this.findAllUsers();
@@ -435,7 +442,9 @@ var fileUpload = document.getElementById('file-upload');
 
 
 // console.log(document);
+var controller = this;
 fileUpload.addEventListener('change', function(event){
+   console.log(controller);
    var file = event.target.files[0];
    var formData = new FormData();
    formData.append('file', file);
@@ -451,8 +460,8 @@ fileUpload.addEventListener('change', function(event){
    }).then(function(res){
       console.log(res);
       imgPreview.src = res.data.secure_url;
-      this.photo = res.data.secure_url;
-      console.log(this.photo);
+      controller.photo = res.data.secure_url;
+      console.log(controller.photo, '***********');
    }.bind(this)).catch(function(err){
       console.log(err);
    });
