@@ -31,9 +31,8 @@ body {
     background: #d95210;
     border-radius: 5px; }
   body #img-preview {
-    width: 50vw;
-    margin: 0 25%;
-    border-radius: 5px;
+    width: 20vw;
+    border-radius: 6vw;
     box-shadow: 6px 7px 13px 0px black; }
   body .file-upload-container {
     border: solid 1px black;

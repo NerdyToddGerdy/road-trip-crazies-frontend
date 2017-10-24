@@ -34,7 +34,7 @@
          <h1>{{main.user.username}}</h1>
 
          <!-- <h1>********** THIS IS A TEST **********</h1> -->
-         <img src="../images/Tom.jpg" id="img-preview" />
+         <img ng-src="{{main.user.photo}} " id="img-preview" />
          <h3 ng-click="main.showUserUpdate = !main.showUserUpdate">Update user</h3>
          <div ng-show="main.showUserUpdate" class="user-photo">
             <label class="file-upload-container" for="file-upload">
